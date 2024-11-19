@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { socialMediaThemes } from '../utils/colorSchemes';
+import MetaTags from '../components/MetaTags.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const meta = {
+  title: `${title} - NoSocialMediaBans`,
+  description: "A website explaining why blanket bans to social media aren't a good thing.",
+  image: '/favicon.png',
+};
+---
+
+<script is:inline define:vars={{ socialMediaThemes }}>
+const root = document.documentElement;
+
+function applyTheme(theme) {
+  for (const variable in theme) {
+    root.style.setProperty(`--${variable}`, theme[variable]);
+  }
+}
+
+function saveTheme(themeName) {
+  localStorage.setItem('selectedTheme', themeName);
+}
+
+function loadTheme() {
+  const savedThemeName = localStorage.getItem('selectedTheme');
+  if (savedThemeName) {
+    const theme = socialMediaThemes.find(t => t.name === savedThemeName)?.theme;
+    if (theme) {
+      applyTheme(theme);
+    }
+    return savedThemeName;
+  }
+  return null;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedThemeName = loadTheme();
+  const themeSelector = document.getElementById('theme-selector');
+  if (savedThemeName) {
+    themeSelector.value = savedThemeName;
+  }
+  themeSelector.addEventListener('change', (event) => {
+    const selectedThemeName = event.target.value;
+    const theme = socialMediaThemes.find(t => t.name === selectedThemeName)?.theme;
+    if (theme) {
+      applyTheme(theme);
+      saveTheme(selectedThemeName);
+    }
+  });
+});
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} - NoSocialMediaBans</title>
+    <MetaTags {...meta} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body class="bg-background text-text">
+    <Header />
+    <main class="min-h-screen px-4 py-8 md:px-8 lg:px-16 flex justify-center">
+      <aside class="fixed top-20 left-20 p-4 shadow-lg rounded bg-white">
+        <label for="theme-selector" class="block mb-2">Choose a theme:</label>
+        <select id="theme-selector" class="mb-4 p-2 border rounded text-black">
+          {socialMediaThemes.map(theme => (
+            <option value={theme.name}>{theme.name}</option>
+          ))}
+        </select>
+      </aside>
+      <div class="flex-1 max-w-4xl mx-auto text-left">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
