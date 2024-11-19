@@ -1,14 +1,5 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-
-const errorMessages = [
-  "Looks like this page has been banned! (Just kidding, it's just missing)",
-  "This page hasn't been blocked - it just doesn't exist!",
-  "No social media ban here, just a missing page",
-  "404: Page Not Found (but at least it wasn't banned)",
-];
-
-const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
 ---
 
 <MainLayout title="404 - Page Not Found">
@@ -29,7 +20,7 @@ const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.len
           class="text-xl md:text-3xl font-semibold leading-relaxed px-4"
           style="color: var(--secondary)"
         >
-          {randomMessage}
+          Page not found.
         </p>
 
         <!-- Explanation -->
@@ -37,8 +28,7 @@ const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.len
           class="text-lg max-w-md mx-auto px-4"
           style="color: var(--text)"
         >
-          The page you're looking for seems to have disappeared into the digital void.
-          Unlike social media, we can't blame this on any bans!
+          Try going home instead?
         </p>
 
         <!-- Much Bigger Home Button -->

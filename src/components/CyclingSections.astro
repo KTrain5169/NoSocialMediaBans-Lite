@@ -2,7 +2,6 @@
 interface Props {
   sections: {
     title: string;
-    description: string;
   }[];
 }
 
@@ -39,9 +38,6 @@ const getThemeColors = (themeName: string) => {
       >
         {section.title}
       </h2>
-      <p class="text-lg" style="color: var(--text)">
-        {section.description}
-      </p>
       {index === sections.length - 1 && <slot />}
     </section>
   ))}
