@@ -132,8 +132,8 @@ export const socialMediaThemes: ColorScheme[] = [
       quaternary: "#000000", // White for contrast
       background: "#ffffff", // White Background
       text: "#24292e", // Dark Gray Text
-      primaryHighlightText: "#24292e", // Dark Gray for light backgrounds
-      secondaryHighlightText: "#ffffff", // White for dark backgrounds
+      primaryHighlightText: "#ffffff", // White for dark backgrounds
+      secondaryHighlightText: "#24292e", // Dark Grey for light backgrounds
     },
   },
   {
