@@ -3,10 +3,10 @@ interface Props {
   title: string;
   items: string[];
   bgColor: 'primary' | 'secondary';
+  textColor: string;
 }
 
-const { title, items, bgColor } = Astro.props;
-const textColor = bgColor === 'primary' ? 'primaryHighlightText' : 'secondaryHighlightText';
+const { title, items, bgColor, textColor } = Astro.props;
 ---
 
 <div class="p-6 rounded-lg" style={`background: var(--${bgColor});`}>
