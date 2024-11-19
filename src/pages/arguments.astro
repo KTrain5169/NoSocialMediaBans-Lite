@@ -5,53 +5,49 @@ const argumentsList = [
   {
     title: "Digital literacy impact",
     expanded: {
-      details: "Digital literacy is crucial in today's interconnected world. Social media platforms, despite their challenges, provide valuable opportunities for young people to develop these skills in a real-world context.",
       examples: [
-        "Students learn to fact-check and verify sources of information",
-        "Development of critical thinking through online discourse",
-        "Understanding digital footprints, reputation management and online discipline",
-        "Learning to navigate privacy settings and online safety tips"
+        "Learning to fact-check and verify sources of information",
+        "Training critical thinking with online discourse",
+        "Understanding digital footprints",
+        "Learning to navigate privacy/safety settings"
       ],
-      impact: "By removing access to these platforms, we risk creating a generation less prepared for the digital workplace and modern communication landscape, exacerbated even further by COVID."
+      impact: "The generation becomes less prepared for the digital world."
     }
   },
   {
     title: "Overly broad definition",
     expanded: {
-      details: "The current state of the proposal suggests that sites like YouTube, Scratch, and other genuinely useful platforms will be subject to age restrictions. This is a massive problem even with an explicit bypass list, as now there are technically 2 lists to maintain and keep up with.",
       examples: [
-        "YouTube videos, often a good tutorial for hard-to-understand concepts, get blocked from people who need it the most",
-        "No clear, unified and safe alternative exists for some of these sites",
-        "Scratch, a deliberately children-first site, could be banned with no clear alternative",
-        "Free and open-source maintainers struggle to keep up with the new rules and don't have as many resources to catch up"
+        "YouTube tutorials get blocked",
+        "No good alternative for these",
+        "Children-focused sites like Scratch get blocked",
+        "FOSS maintainers (like those for BlueSky) don't have resources to comply"
       ],
-      impact: "These economic disruptions can have lasting effects on communities, particularly affecting young entrepreneurs and small businesses."
+      impact: "A wide net is cast that block unnecessary sites."
     }
   },
   {
     title: "Enforcement challenges",
     expanded: {
-      details: "The enforcement of social media bans presents significant practical challenges. While VPNs can be used to circumvent bans, age verification systems can be difficult to implement consistently across platforms, leading to inconsistent enforcement.",
       examples: [
-        "VPNs can be used to circumvent bans, effectively nullifying bans",
-        "Age verification systems can be difficult to implement consistently across platforms",
-        "Certain platforms may have more resources to enforce bans than others",
-        "Government resources could be better spent on other initiatives that could actually help."
+        "VPNs circumvent these bans",
+        "Age verification can be difficult to consistently implement",
+        "Resourcing for enforcement is a challenge",
+        "Government resources could be spent on, well, better things to say the least"
       ],
-      impact: "These challenges make it difficult to enforce social media bans effectively."
+      impact: "Enforcement will likely be futile and a waste of resources."
     }
   },
   {
     title: "Privacy and rights",
     expanded: {
-      details: "Social media bans can infringe on personal rights and create privacy concerns. Requiring ID to be sent over the internet is simply just a disaster waiting to happen.",
       examples: [
-        "Age verification systems can restrict access to information",
-        "Privacy & security risks are spawned when using an ID-based verification systems",
-        "This can increase the risk of both identity theft and civil danger to the user",
-        "Restriction of free expression, even more so with government surveillance technically on the cards"
+        "Age verification restrict information access",
+        "Privacy & security risks with ID-based verification",
+        "Increased identity/civil risks",
+        "Government surveillance is not far off"
       ],
-      impact: "These privacy concerns can have lasting effects on individuals, particularly affecting their ability to access information and express themselves freely."
+      impact: "Privacy and rights are at risk."
     }
   }
 ];
@@ -92,7 +88,6 @@ const argumentsList = [
           <div class="expanded-content hidden mt-6 space-y-4" data-index={index}>
             <div class="p-4 rounded-lg" 
                  style="background: color-mix(in srgb, var(--secondary) 10%, var(--background))">
-              <p class="mb-4" style="color: var(--text)">{arg.expanded.details}</p>
               
               <h3 class="text-xl font-semibold mb-3" style="color: var(--secondary)">
                 Supporting Examples
