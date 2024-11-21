@@ -3,10 +3,12 @@ const currentYear = new Date().getFullYear();
 
 const resources = [
   { name: 'Site source code', path: 'https://github.com/KTrain5169/NoSocialMediaBans-Lite' },
+  { name: 'Original site', path: 'https://socialmediabans.ktrain5369.me/' },
 ];
 
-const contact = [
-  { name: 'Contribute', path: 'https://github.com/KTrain5169/NoSocialMediaBans-Lite/issues' },
+const contribute = [
+  { name: 'Pull Requests', path: 'https://github.com/KTrain5169/NoSocialMediaBans-Lite/pulls' },
+  { name: 'Report an issue', path: 'https://github.com/KTrain5169/NoSocialMediaBans-Lite/issues' },
 ];
 ---
 
@@ -60,7 +62,7 @@ const contact = [
             <span class="absolute -bottom-1 left-0 w-1/2 h-0.5" style="background: var(--accent)"></span>
           </h3>
           <ul class="space-y-2">
-            {contact.map((item) => (
+            {contribute.map((item) => (
               <li>
                 <a href={item.path} 
                    class="group relative inline-block transition-all duration-300"
